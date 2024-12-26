@@ -168,3 +168,5 @@ D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\ref\SchoolProje
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\AutoMapper.dll
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cs
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.sourcelink.json
+D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\FluentValidation.dll
+D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll

@@ -1,6 +1,4 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SchoolProject.API.Base;
 using SchoolProject.Core.Features.Students.Commands.Models;
 using SchoolProject.Core.Features.Students.Queries.Models;
@@ -8,16 +6,16 @@ using SchoolProject.Data.AppMetaData;
 
 namespace SchoolProject.API.Controllers
 {
- //   [Route("api/[controller]")]
+    //   [Route("api/[controller]")]
     [ApiController]
-    public class StudentController :AppControllerBase
+    public class StudentController : AppControllerBase
     {
-      
+
         [HttpGet(Router.StudentRouting.List)]
         public async Task<IActionResult> GetStudentList()
         {
             var response = await Mediator.Send(new GetStudentListQuery());
-            return NewResult( response);
+            return NewResult(response);
         }
         [HttpGet(Router.StudentRouting.GetByID)]
         public async Task<IActionResult> GetStudentById(int id)
@@ -26,9 +24,15 @@ namespace SchoolProject.API.Controllers
             return NewResult(response);
         }
         [HttpPost(Router.StudentRouting.Create)]
-        public async Task<IActionResult> AddStudent([FromBody]AddStudentCommand addStudentCommand)
+        public async Task<IActionResult> AddStudent([FromBody] AddStudentCommand addStudentCommand)
         {
             var response = await Mediator.Send(addStudentCommand);
+            return NewResult(response);
+        }
+        [HttpPut(Router.StudentRouting.Edit)]
+        public async Task<IActionResult> EditStudent([FromBody] EditStudentCommand editStudentCommand)
+        {
+            var response = await Mediator.Send(editStudentCommand);
             return NewResult(response);
         }
     }

@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "SchoolProject.API.Controllers.StudentController",
+    "Method": "EditStudent",
+    "RelativePath": "api/Student/Api/V1/Student/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editStudentCommand",
+        "Type": "SchoolProject.Core.Features.Students.Commands.Models.EditStudentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.StudentController",
     "Method": "GetStudentList",
     "RelativePath": "api/Student/Api/V1/StudentList",
     "HttpMethod": "GET",

@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
 using SchoolProject.Core;
+using SchoolProject.Core.Middleware;
 using SchoolProject.infrastructure;
-using SchoolProject.infrastructure.Abstracts;
 using SchoolProject.infrastructure.Data;
-using SchoolProject.infrastructure.Repositories;
 using SchoolProject.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,11 +28,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "School API V1");
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "School API V1");
         c.RoutePrefix = string.Empty;
     });
 }
-
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
