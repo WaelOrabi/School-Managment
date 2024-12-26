@@ -24,7 +24,7 @@ namespace SchoolProject.Service.Implementations
         {
             return await _studentRepository.GetStudentsListAsync();
         }
-        public async Task<Student> GetStudentByIdAsync(int id)
+        public async Task<Student> GetStudentByIdWithIncludeAsync(int id)
         {
             //  return await _studentRepository.GetByIdAsync(id);
             var student = _studentRepository.GetTabkeNoTracking().Include(x => x.Department).Where(x => x.StudID.Equals(id)).FirstOrDefault();
@@ -60,6 +60,29 @@ namespace SchoolProject.Service.Implementations
         {
             await _studentRepository.UpdateAsync(student);
             return "Success";
+        }
+
+        public async Task<string> DeleteAsync(Student student)
+        {
+            var trans = _studentRepository.BeginTransaction();
+            try
+            {
+                await _studentRepository.DeleteAsync(student);
+                await trans.CommitAsync();
+                return "Success";
+            }
+            catch
+            {
+                await trans.RollbackAsync();
+                return "Falied";
+            }
+
+        }
+
+        public async Task<Student> GetStudentByIdAsync(int id)
+        {
+            return await _studentRepository.GetByIdAsync(id);
+
         }
         #endregion
 

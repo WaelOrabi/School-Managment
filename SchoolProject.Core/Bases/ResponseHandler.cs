@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace SchoolProject.Core.Bases
 {
@@ -27,24 +22,24 @@ namespace SchoolProject.Core.Bases
         }
 
 
-        public Response<T> GenerateDeletedResponse<T>()
+        public Response<T> GenerateDeletedResponse<T>(string message = null)
         {
-            return CreateResponse<T>(HttpStatusCode.OK, true, "Deleted Successfully");
+            return CreateResponse<T>(HttpStatusCode.OK, true, message ?? "Deleted Successfully");
         }
 
- 
+
         public Response<T> GenerateSuccessResponse<T>(T entity, object meta = null)
         {
             return CreateResponse(HttpStatusCode.OK, true, "Added Successfully", entity, meta);
         }
 
- 
+
         public Response<T> GenerateUnauthorizedResponse<T>()
         {
             return CreateResponse<T>(HttpStatusCode.Unauthorized, false, "Unauthorized");
         }
 
-  
+
         public Response<T> GenerateBadRequestResponse<T>(string message = null)
         {
             return CreateResponse<T>(HttpStatusCode.BadRequest, false, message ?? "Bad Request");
