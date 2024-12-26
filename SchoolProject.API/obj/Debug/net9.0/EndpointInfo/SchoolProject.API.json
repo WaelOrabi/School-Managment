@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/Api/V1/StudentList": {
+    "/api/Student/Api/V1/StudentList": {
       "get": {
         "tags": [
           "Student"
@@ -17,7 +17,7 @@
         }
       }
     },
-    "/Api/V1/Student/{id}": {
+    "/api/Student/Api/V1/Student/{id}": {
       "get": {
         "tags": [
           "Student"
@@ -40,7 +40,7 @@
         }
       }
     },
-    "/Api/V1/Student/Create": {
+    "/api/Student/Api/V1/Student/Create": {
       "post": {
         "tags": [
           "Student"
