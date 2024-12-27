@@ -9,10 +9,10 @@ D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\Scho
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.AssemblyInfoInputs.cache
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.AssemblyInfo.cs
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.csproj.CoreCompileInputs.cache
+D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.sourcelink.json
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolPr.16341836.Up2Date
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.dll
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\refint\SchoolProject.infrastructure.dll
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.pdb
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.genruntimeconfig.cache
 D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\ref\SchoolProject.infrastructure.dll
-D:\projects.net\SchoolProject\SchoolProject.infrastructure\obj\Debug\net9.0\SchoolProject.infrastructure.sourcelink.json

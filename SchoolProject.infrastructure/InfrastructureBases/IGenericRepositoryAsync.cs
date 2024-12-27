@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolProject.infrastructure.InfrastructureBases
 {
@@ -15,11 +10,11 @@ namespace SchoolProject.infrastructure.InfrastructureBases
         IDbContextTransaction BeginTransaction();
         void Commit();
         void RollBack();
-        IQueryable<T> GetTabkeNoTracking();
+        IQueryable<T> GetTableNoTracking();
         IQueryable<T> GetTableAsTracking();
-        Task<T>AddAsync(T entity);
-        Task AddRangeAsync(ICollection<T>entities);
-        Task UpdateAsync(T entity); 
+        Task<T> AddAsync(T entity);
+        Task AddRangeAsync(ICollection<T> entities);
+        Task UpdateAsync(T entity);
         Task UpdateRangeAsync(ICollection<T> entities);
         Task DeleteAsync(T entity);
     }

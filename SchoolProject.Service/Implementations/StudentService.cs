@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolProject.Data.Entities;
+using SchoolProject.Data.Helpers;
 using SchoolProject.infrastructure.Abstracts;
 using SchoolProject.Service.Abstracts;
 
@@ -27,7 +28,7 @@ namespace SchoolProject.Service.Implementations
         public async Task<Student> GetStudentByIdWithIncludeAsync(int id)
         {
             //  return await _studentRepository.GetByIdAsync(id);
-            var student = _studentRepository.GetTabkeNoTracking().Include(x => x.Department).Where(x => x.StudID.Equals(id)).FirstOrDefault();
+            var student = _studentRepository.GetTableNoTracking().Include(x => x.Department).Where(x => x.StudID.Equals(id)).FirstOrDefault();
             return student;
         }
 
@@ -44,14 +45,14 @@ namespace SchoolProject.Service.Implementations
 
         public async Task<bool> IsNameExist(string name)
         {
-            var student = await _studentRepository.GetTabkeNoTracking().Where(x => x.Name == name).FirstOrDefaultAsync();
+            var student = await _studentRepository.GetTableNoTracking().Where(x => x.Name == name).FirstOrDefaultAsync();
             if (student == null) return false;
             return true;
         }
 
         public async Task<bool> IsNameExistExcludeSelf(string name, int id)
         {
-            var student = await _studentRepository.GetTabkeNoTracking().Where(x => x.Name.Equals(name) & !x.StudID.Equals(id)).FirstOrDefaultAsync();
+            var student = await _studentRepository.GetTableNoTracking().Where(x => x.Name.Equals(name) & !x.StudID.Equals(id)).FirstOrDefaultAsync();
             if (student == null) return false;
             return true;
         }
@@ -83,6 +84,34 @@ namespace SchoolProject.Service.Implementations
         {
             return await _studentRepository.GetByIdAsync(id);
 
+        }
+
+        public IQueryable<Student> GetStudentsQuerable()
+        {
+            return _studentRepository.GetTableNoTracking().Include(x => x.Department).AsQueryable();
+        }
+
+        public IQueryable<Student> FilterStudentPaginatedQuerable(StudentOrderingEnum studentOrderingEnum, string search)
+        {
+            var querable = _studentRepository.GetTableNoTracking().Include(x => x.Department).AsQueryable();
+            if (search != null)
+                querable = querable.Where(x => x.Name.Contains(search) || x.Address.Contains(search));
+            switch (studentOrderingEnum)
+            {
+                case StudentOrderingEnum.StudID:
+                    querable = querable.OrderBy(x => x.StudID);
+                    break;
+                case StudentOrderingEnum.Name:
+                    querable = querable.OrderBy(x => x.Name);
+                    break;
+                case StudentOrderingEnum.DepartmentName:
+                    querable = querable.OrderBy(x => x.Department.DName);
+                    break;
+                case StudentOrderingEnum.Address:
+                    querable = querable.OrderBy(x => x.Address);
+                    break;
+            }
+            return querable;
         }
         #endregion
 

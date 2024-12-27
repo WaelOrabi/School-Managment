@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using SchoolProject.infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolProject.infrastructure.InfrastructureBases
 {
@@ -28,18 +23,18 @@ namespace SchoolProject.infrastructure.InfrastructureBases
             return await _dbContext.Set<T>().FindAsync(id);
         }
 
-        public IQueryable<T> GetTabkeNoTracking()
+        public IQueryable<T> GetTableNoTracking()
         {
             return _dbContext.Set<T>().AsNoTracking().AsQueryable();
         }
-        public virtual async Task AddRangeAsync(ICollection<T>entities)
+        public virtual async Task AddRangeAsync(ICollection<T> entities)
         {
-             await _dbContext.Set<T>().AddRangeAsync(entities);
+            await _dbContext.Set<T>().AddRangeAsync(entities);
             await _dbContext.SaveChangesAsync();
         }
         public virtual async Task<T> AddAsync(T entity)
         {
-             await _dbContext.Set<T>().AddAsync(entity);
+            await _dbContext.Set<T>().AddAsync(entity);
             await _dbContext.SaveChangesAsync();
             return entity;
         }
@@ -56,8 +51,8 @@ namespace SchoolProject.infrastructure.InfrastructureBases
         }
         public virtual async Task DeleteRangeAsync(ICollection<T> entities)
         {
-            foreach(var entity in entities)
-                _dbContext.Entry(entity).State= EntityState.Deleted;
+            foreach (var entity in entities)
+                _dbContext.Entry(entity).State = EntityState.Deleted;
             await _dbContext.SaveChangesAsync();
         }
         public async Task SaveChangesAsync()
@@ -75,7 +70,7 @@ namespace SchoolProject.infrastructure.InfrastructureBases
         }
         public void RollBack()
         {
-          _dbContext.Database.RollbackTransaction();
+            _dbContext.Database.RollbackTransaction();
         }
 
 
