@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Localization;
 using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Students.Queries.Models;
 using SchoolProject.Core.Features.Students.Queries.Response;
+using SchoolProject.Core.Resources;
 using SchoolProject.Core.Wrappers;
 using SchoolProject.Data.Entities;
 using SchoolProject.Service.Abstracts;
@@ -15,12 +17,14 @@ namespace SchoolProject.Core.Features.Students.Queries.Handlers
         #region Fields
         private IStudentService _studentService;
         private readonly IMapper _mapper;
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
         #endregion
         #region Constructors
-        public StudentQueryHandler(IStudentService studentService, IMapper mapper)
+        public StudentQueryHandler(IStudentService studentService, IMapper mapper, IStringLocalizer<SharedResources> stringLocalizer) : base(stringLocalizer)
         {
             _studentService = studentService;
             _mapper = mapper;
+            _stringLocalizer = stringLocalizer;
         }
         #endregion
 
@@ -29,7 +33,9 @@ namespace SchoolProject.Core.Features.Students.Queries.Handlers
         {
             var studentList = await _studentService.GetStudentsListAsync();
             var studentListMapper = _mapper.Map<List<GetStudentListResponse>>(studentList);
-            return GenerateSuccessResponse(studentListMapper);
+            var result = GenerateSuccessResponse(studentListMapper);
+            result.Meta = new { Count = studentListMapper.Count() };
+            return result;
         }
 
         public async Task<Response<GetStudentResponse>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
@@ -37,16 +43,17 @@ namespace SchoolProject.Core.Features.Students.Queries.Handlers
             var student = await _studentService.GetStudentByIdWithIncludeAsync(request.Id);
             var result = _mapper.Map<GetStudentResponse>(student);
             if (result == null)
-                return GenerateNotFoundResponse<GetStudentResponse>("object not found");
+                return GenerateNotFoundResponse<GetStudentResponse>(_stringLocalizer[SharedResourcesKeys.NotFound]);
             return GenerateSuccessResponse<GetStudentResponse>(result);
         }
 
         public async Task<PaginatedResult<GetStudentPaginatedListResponse>> Handle(GetStudentPaginatedListQuery request, CancellationToken cancellationToken)
         {
-            Expression<Func<Student, GetStudentPaginatedListResponse>> expression = e => new GetStudentPaginatedListResponse(e.StudID, e.Name, e.Address, e.Department.DName);
+            Expression<Func<Student, GetStudentPaginatedListResponse>> expression = e => new GetStudentPaginatedListResponse(e.StudID, e.Localize(e.NameAr, e.NameEn), e.Address, e.Department.Localize(e.Department.DNameAr, e.Department.DNameEn));
             //var querable = _studentService.GetStudentsQuerable();
             var filter = _studentService.FilterStudentPaginatedQuerable(request.OrderBy, request.Search);
             var paginatedList = await filter.Select(expression).ToPaginatedListAsunc(request.PageNumber, request.PageSize);
+            paginatedList.Meta = new { Count = paginatedList.Data.Count() };
             return paginatedList;
         }
         #endregion

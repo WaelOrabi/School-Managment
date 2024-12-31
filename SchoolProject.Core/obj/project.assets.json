@@ -410,6 +410,19 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Localization.Abstractions/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Microsoft.Extensions.Localization.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Localization.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -1678,6 +1691,25 @@
         "microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Localization.Abstractions/9.0.0": {
+      "sha512": "wc7PaRhPOnio5Csj80b3UgBWA5l6bp28EhGem7gtfpVopcwbkfPb2Sk8Cu6eBnIW3ZNf1YUgYJzwtjzZEM8+iw==",
+      "type": "package",
+      "path": "microsoft.extensions.localization.abstractions/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.Localization.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Localization.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Localization.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Localization.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.xml",
+        "microsoft.extensions.localization.abstractions.9.0.0.nupkg.sha512",
+        "microsoft.extensions.localization.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/9.0.0": {
@@ -3023,6 +3055,7 @@
       "FluentValidation.DependencyInjectionExtensions >= 11.11.0",
       "MediatR >= 12.4.1",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
+      "Microsoft.Extensions.Localization.Abstractions >= 9.0.0",
       "SchoolProject.Data >= 1.0.0",
       "SchoolProject.Service >= 1.0.0",
       "SchoolProject.infrastructure >= 1.0.0"
@@ -3107,6 +3140,10 @@
           "Microsoft.AspNetCore.Http.Abstractions": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.Localization.Abstractions": {
+            "target": "Package",
+            "version": "[9.0.0, )"
           }
         },
         "imports": [

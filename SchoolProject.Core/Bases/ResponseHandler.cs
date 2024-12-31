@@ -1,9 +1,16 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Localization;
+using SchoolProject.Core.Resources;
+using System.Net;
 
 namespace SchoolProject.Core.Bases
 {
     public class ResponseHandler
     {
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        public ResponseHandler(IStringLocalizer<SharedResources> stringLocalizer)
+        {
+            _stringLocalizer = stringLocalizer;
+        }
         private Response<T> CreateResponse<T>(
             HttpStatusCode statusCode,
             bool succeeded,
@@ -24,13 +31,13 @@ namespace SchoolProject.Core.Bases
 
         public Response<T> GenerateDeletedResponse<T>(string message = null)
         {
-            return CreateResponse<T>(HttpStatusCode.OK, true, message ?? "Deleted Successfully");
+            return CreateResponse<T>(HttpStatusCode.OK, true, message ?? _stringLocalizer[SharedResourcesKeys.Deleted]);
         }
 
 
         public Response<T> GenerateSuccessResponse<T>(T entity, object meta = null)
         {
-            return CreateResponse(HttpStatusCode.OK, true, "Added Successfully", entity, meta);
+            return CreateResponse(HttpStatusCode.OK, true, _stringLocalizer[SharedResourcesKeys.Success], entity, meta);
         }
 
 
@@ -50,11 +57,11 @@ namespace SchoolProject.Core.Bases
         }
         public Response<T> GenerateNotFoundResponse<T>(string message = null)
         {
-            return CreateResponse<T>(HttpStatusCode.NotFound, false, message ?? "Not Found");
+            return CreateResponse<T>(HttpStatusCode.NotFound, false, message ?? _stringLocalizer[SharedResourcesKeys.NotFound]);
         }
         public Response<T> GenerateCreatedResponse<T>(T entity, object meta = null)
         {
-            return CreateResponse(HttpStatusCode.Created, true, "Created Successfully", entity, meta);
+            return CreateResponse(HttpStatusCode.Created, true, _stringLocalizer[SharedResourcesKeys.Created], entity, meta);
         }
     }
 }

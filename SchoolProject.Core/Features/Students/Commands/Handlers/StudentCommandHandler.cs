@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Localization;
 using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Students.Commands.Models;
+using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities;
 using SchoolProject.Service.Abstracts;
 
@@ -12,12 +14,14 @@ namespace SchoolProject.Core.Features.Students.Commands.Handlers
         #region Fields
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
+        private readonly IStringLocalizer<SharedResources> _localizer;
         #endregion
         #region Constructors
-        public StudentCommandHandler(IStudentService studentService, IMapper mapper)
+        public StudentCommandHandler(IStudentService studentService, IMapper mapper, IStringLocalizer<SharedResources> localizer) : base(localizer)
         {
             _studentService = studentService;
             _mapper = mapper;
+            _localizer = localizer;
         }
         #endregion
 
@@ -27,7 +31,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Handlers
             var studentMapper = _mapper.Map<Student>(request);
             var result = await _studentService.AddAsync(studentMapper);
             if (result == "Success")
-                return GenerateCreatedResponse<string>("Added Successfully");
+                return GenerateCreatedResponse<string>("");
             else return GenerateBadRequestResponse<string>();
 
         }
@@ -40,7 +44,7 @@ namespace SchoolProject.Core.Features.Students.Commands.Handlers
             if (student == null)
                 return GenerateNotFoundResponse<string>("Student is not found");
 
-            var studentmapper = _mapper.Map<Student>(request);
+            var studentmapper = _mapper.Map(request, student);
             var result = await _studentService.EditAsync(studentmapper);
             if (result == "Success") return GenerateSuccessResponse<string>($"Edit Successfully {studentmapper.StudID}");
             else return GenerateBadRequestResponse<string>();

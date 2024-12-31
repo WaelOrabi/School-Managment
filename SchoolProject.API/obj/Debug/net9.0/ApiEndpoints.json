@@ -83,7 +83,7 @@
       },
       {
         "Name": "OrderBy",
-        "Type": "System.String[]",
+        "Type": "System.String",
         "IsRequired": false
       },
       {

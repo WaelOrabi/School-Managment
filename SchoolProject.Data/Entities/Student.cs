@@ -1,31 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SchoolProject.Data.Commons;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolProject.Data.Entities
 {
-    public class Student
+    public class Student : GeneralLocalizableEntity
     {
         public Student()
         {
             StudentsSubjects = new HashSet<StudentSubject>();
         }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudID { get; set; }
-        [StringLength(200)]
-        public string Name { get; set; }
+        [StringLength(100)]
+        public string? NameAr { get; set; }
+        [StringLength(100)]
+        public string? NameEn { get; set; }
         [StringLength(500)]
-        public string Address { get; set; }
+        public string? Address { get; set; }
         [StringLength(500)]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
         public int? DID { get; set; }
 
         [ForeignKey("DID")]
-        public virtual Department Department { get; set; }
+        [InverseProperty(nameof(Department.Students))]
+        public virtual Department? Department { get; set; }
+        [InverseProperty(nameof(StudentSubject.Student))]
         public virtual ICollection<StudentSubject> StudentsSubjects { get; set; }
     }
 }
