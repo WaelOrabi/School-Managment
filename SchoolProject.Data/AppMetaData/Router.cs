@@ -26,6 +26,8 @@
         {
             public const string Prefix = Role + "User";
             public const string Create = Prefix + "/Create";
+            public const string Paginated = Prefix + "/Paginated";
+            public const string GetById = Prefix + "/{id}";
         }
     }
 }

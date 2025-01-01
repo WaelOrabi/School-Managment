@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/ApplicationUser/Api/V1/User/Create": {
+    "/Api/V1/User/Create": {
       "post": {
         "tags": [
           "ApplicationUser"
@@ -36,7 +36,60 @@
         }
       }
     },
-    "/api/Department/Api/V1/Department/id": {
+    "/Api/V1/User/Paginated": {
+      "get": {
+        "tags": [
+          "ApplicationUser"
+        ],
+        "parameters": [
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Api/V1/User/{id}": {
+      "get": {
+        "tags": [
+          "ApplicationUser"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Api/V1/Department/id": {
       "get": {
         "tags": [
           "Department"
@@ -74,7 +127,7 @@
         }
       }
     },
-    "/api/Student/Api/V1/StudentList": {
+    "/Api/V1/StudentList": {
       "get": {
         "tags": [
           "Student"
@@ -86,7 +139,7 @@
         }
       }
     },
-    "/api/Student/Api/V1/Student/Paginated": {
+    "/Api/V1/Student/Paginated": {
       "get": {
         "tags": [
           "Student"
@@ -130,7 +183,7 @@
         }
       }
     },
-    "/api/Student/Api/V1/Student/{id}": {
+    "/Api/V1/Student/{id}": {
       "get": {
         "tags": [
           "Student"
@@ -174,7 +227,7 @@
         }
       }
     },
-    "/api/Student/Api/V1/Student/Create": {
+    "/Api/V1/Student/Create": {
       "post": {
         "tags": [
           "Student"
@@ -205,7 +258,7 @@
         }
       }
     },
-    "/api/Student/Api/V1/Student/Edit": {
+    "/Api/V1/Student/Edit": {
       "put": {
         "tags": [
           "Student"
