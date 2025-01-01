@@ -164,6 +164,22 @@
   },
   {
     "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
+    "Method": "Edit",
+    "RelativePath": "Api/V1/User/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "SchoolProject.Core.Features.ApplicationUser.Commands.Models.EditUserCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
     "Method": "Paginated",
     "RelativePath": "Api/V1/User/Paginated",
     "HttpMethod": "GET",
