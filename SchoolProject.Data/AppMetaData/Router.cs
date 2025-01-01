@@ -16,5 +16,11 @@
             public const string Delete = Prefix + "/{id}";
             public const string Paginated = Prefix + "/Paginated";
         }
+
+        public static class DepartmentRouting
+        {
+            public const string Prefix = Role + "Department";
+            public const string GetByID = Prefix + "/id";
+        }
     }
 }

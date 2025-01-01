@@ -1,3 +1,10 @@
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.csproj.AssemblyReference.cache
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfoInputs.cache
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfo.cs
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.csproj.CoreCompileInputs.cache
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cache
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.sourcelink.json
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\appsettings.Development.json
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\appsettings.json
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\SchoolProject.API.staticwebassets.endpoints.json
@@ -14,6 +21,7 @@ D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\FluentValidatio
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Humanizer.dll
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\MediatR.dll
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\MediatR.Contracts.dll
+D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
@@ -147,14 +155,6 @@ D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\SchoolProject.i
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\SchoolProject.Service.pdb
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Ar\SchoolProject.Core.resources.dll
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\En\SchoolProject.Core.resources.dll
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.csproj.AssemblyReference.cache
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.GeneratedMSBuildEditorConfig.editorconfig
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfoInputs.cache
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfo.cs
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.csproj.CoreCompileInputs.cache
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cs
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cache
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.sourcelink.json
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\scopedcss\bundle\SchoolProject.API.styles.css
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\staticwebassets.build.json
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\staticwebassets.development.json

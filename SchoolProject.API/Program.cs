@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SchoolProject.Core;
 using SchoolProject.Core.Middleware;
+using SchoolProject.Data.Entities.Identity;
 using SchoolProject.infrastructure;
 using SchoolProject.infrastructure.Data;
 using SchoolProject.Service;
@@ -40,6 +42,31 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedCultures = supportedCultures;
     options.SupportedUICultures = supportedCultures;
 });
+#endregion
+
+#region identity
+builder.Services.AddIdentity<User, IdentityRole<int>>(option =>
+{
+    // Password settings.
+    option.Password.RequireDigit = true;
+    option.Password.RequireLowercase = true;
+    option.Password.RequireNonAlphanumeric = true;
+    option.Password.RequireUppercase = true;
+    option.Password.RequiredLength = 6;
+    option.Password.RequiredUniqueChars = 1;
+
+    // Lockout settings.
+    option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    option.Lockout.MaxFailedAccessAttempts = 5;
+    option.Lockout.AllowedForNewUsers = true;
+
+    // User settings.
+    option.User.AllowedUserNameCharacters =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    option.User.RequireUniqueEmail = true;
+    option.SignIn.RequireConfirmedEmail = false;
+
+}).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 #endregion
 var app = builder.Build();
 

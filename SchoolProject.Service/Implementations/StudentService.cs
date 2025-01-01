@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SchoolProject.Data.Commons;
 using SchoolProject.Data.Entities;
 using SchoolProject.Data.Helpers;
 using SchoolProject.infrastructure.Abstracts;
@@ -43,11 +44,18 @@ namespace SchoolProject.Service.Implementations
             return "Success";
         }
 
+        //public async Task<bool> IsNameExist(string name)
+        //{
+        //    var student = await _studentRepository.GetTableNoTracking().Where(x => x.Localize(x.NameAr, x.NameEn).Equals(name)).FirstOrDefaultAsync();
+        //    if (student == null) return false;
+        //    return true;
+        //}
         public async Task<bool> IsNameExist(string name)
         {
-            var student = await _studentRepository.GetTableNoTracking().Where(x => x.Localize(x.NameAr, x.NameEn) == name).FirstOrDefaultAsync();
-            if (student == null) return false;
-            return true;
+            var students = await _studentRepository.GetTableNoTracking().ToListAsync(); // Fetch data from the database
+            var student = students.FirstOrDefault(x =>
+                new GeneralLocalizableEntity().Localize(x.NameAr, x.NameEn).Equals(name, StringComparison.OrdinalIgnoreCase));
+            return student != null;
         }
 
         public async Task<bool> IsNameExistExcludeSelf(string name, int id)
@@ -112,6 +120,11 @@ namespace SchoolProject.Service.Implementations
                     break;
             }
             return querable;
+        }
+
+        public IQueryable<Student> GetStudentsByDepartmentIdQuerable(int DID)
+        {
+            return _studentRepository.GetTableNoTracking().Where(x => x.DID.Equals(DID)).AsQueryable();
         }
         #endregion
 

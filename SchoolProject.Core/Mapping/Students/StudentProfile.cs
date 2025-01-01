@@ -11,6 +11,8 @@ namespace SchoolProject.Core.Mapping.Students
             GetStudentMapping();
             AddStudentMapping();
             EditStudentMapping();
+            GetStudentPaginationMapping();
+
         }
     }
 }

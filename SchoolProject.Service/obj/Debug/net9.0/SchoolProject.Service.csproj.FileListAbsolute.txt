@@ -1,3 +1,9 @@
+D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.csproj.AssemblyReference.cache
+D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.AssemblyInfoInputs.cache
+D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.AssemblyInfo.cs
+D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.csproj.CoreCompileInputs.cache
+D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.sourcelink.json
 D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProject.Service.deps.json
 D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProject.Service.dll
 D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProject.Service.pdb
@@ -5,12 +11,6 @@ D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProje
 D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProject.infrastructure.dll
 D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProject.Data.pdb
 D:\projects.net\SchoolProject\SchoolProject.Service\bin\Debug\net9.0\SchoolProject.infrastructure.pdb
-D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.csproj.AssemblyReference.cache
-D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.GeneratedMSBuildEditorConfig.editorconfig
-D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.AssemblyInfoInputs.cache
-D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.AssemblyInfo.cs
-D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.csproj.CoreCompileInputs.cache
-D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.sourcelink.json
 D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolPr.DAAA73F9.Up2Date
 D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\SchoolProject.Service.dll
 D:\projects.net\SchoolProject\SchoolProject.Service\obj\Debug\net9.0\refint\SchoolProject.Service.dll
