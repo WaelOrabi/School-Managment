@@ -24,7 +24,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 #region Dependency Injections
-builder.Services.AddInfrastructureDependencies().AddServiceDependencies().AddCoreDependencies();
+builder.Services.AddInfrastructureDependencies().AddServiceDependencies().AddCoreDependencies().AddServiceRegisteration();
 #endregion
 
 #region Localization
@@ -44,30 +44,6 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 });
 #endregion
 
-#region identity
-builder.Services.AddIdentity<User, IdentityRole<int>>(option =>
-{
-    // Password settings.
-    option.Password.RequireDigit = true;
-    option.Password.RequireLowercase = true;
-    option.Password.RequireNonAlphanumeric = true;
-    option.Password.RequireUppercase = true;
-    option.Password.RequiredLength = 6;
-    option.Password.RequiredUniqueChars = 1;
-
-    // Lockout settings.
-    option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-    option.Lockout.MaxFailedAccessAttempts = 5;
-    option.Lockout.AllowedForNewUsers = true;
-
-    // User settings.
-    option.User.AllowedUserNameCharacters =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-    option.User.RequireUniqueEmail = true;
-    option.SignIn.RequireConfirmedEmail = false;
-
-}).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline

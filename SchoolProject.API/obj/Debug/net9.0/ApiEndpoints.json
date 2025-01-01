@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
+    "Method": "Create",
+    "RelativePath": "api/ApplicationUser/Api/V1/User/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.ApplicationUser.Commands.Models.AddUserCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
     "Method": "GetDepartmentById",
     "RelativePath": "api/Department/Api/V1/Department/id",
