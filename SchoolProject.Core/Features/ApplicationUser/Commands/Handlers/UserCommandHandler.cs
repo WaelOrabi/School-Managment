@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
@@ -10,7 +11,9 @@ using SchoolProject.Data.Entities.Identity;
 namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 {
     public class UserCommandHandler : ResponseHandler, IRequestHandler<AddUserCommandModel, Response<string>>,
-                                                       IRequestHandler<EditUserCommandModel, Response<string>>
+                                                       IRequestHandler<EditUserCommandModel, Response<string>>,
+                                                       IRequestHandler<DeleteUserCommandModel, Response<string>>,
+                                                       IRequestHandler<ChangeUserPasswordCommand, Response<string>>
 
     {
         #region Fields
@@ -47,9 +50,34 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
             var oldUser = await _userManager.FindByIdAsync(request.Id.ToString());
             if (oldUser == null) return GenerateNotFoundResponse<string>();
             var newUser = _mapper.Map(request, oldUser);
+            var userByUserName = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == newUser.UserName && x.Id != newUser.Id);
+            if (userByUserName != null)
+                return GenerateBadRequestResponse<string>(_localizer[SharedResourcesKeys.UserNameIsExist]);
             var result = await _userManager.UpdateAsync(newUser);
             if (!result.Succeeded) return GenerateBadRequestResponse<string>(_localizer[SharedResourcesKeys.UpdateFailed]);
             return GenerateSuccessResponse<string>(_localizer[SharedResourcesKeys.Updated]);
+        }
+
+        public async Task<Response<string>> Handle(DeleteUserCommandModel request, CancellationToken cancellationToken)
+        {
+            var user = await _userManager.FindByIdAsync(request.Id.ToString());
+            if (user == null) return GenerateNotFoundResponse<string>();
+            var result = await _userManager.DeleteAsync(user);
+            if (!result.Succeeded) return GenerateBadRequestResponse<string>(_localizer[SharedResourcesKeys.DeletedFailed]);
+            return GenerateDeletedResponse<string>();
+
+        }
+
+        public async Task<Response<string>> Handle(ChangeUserPasswordCommand request, CancellationToken cancellationToken)
+        {
+            var user = await _userManager.FindByIdAsync(request.Id.ToString());
+            if (user == null) return GenerateNotFoundResponse<string>();
+            var result = await _userManager.ChangePasswordAsync(user, request.CurrentPassword, request.NewPassword);
+            //var user1=await _userManager.HasPasswordAsync(user);
+            //     await _userManager.RemovePasswordAsync(user);
+            //     await _userManager.AddPasswordAsync(user, request.NewPassword);
+            if (!result.Succeeded) return GenerateBadRequestResponse<string>(result.Errors.FirstOrDefault().Description);
+            return GenerateSuccessResponse<string>("");
         }
         #endregion
     }
