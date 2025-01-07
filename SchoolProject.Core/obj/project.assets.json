@@ -3795,11 +3795,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj",
+      "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj",
       "projectName": "SchoolProject.Core",
-      "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj",
+      "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\obj\\",
+      "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3820,14 +3820,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj": {
-              "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj"
+            "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj": {
+              "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj"
             },
-            "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
-              "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj"
+            "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
+              "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj"
             },
-            "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj": {
-              "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj"
+            "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj": {
+              "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj"
             }
           }
         }

@@ -5825,11 +5825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.API\\SchoolProject.API.csproj",
+      "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.API\\SchoolProject.API.csproj",
       "projectName": "SchoolProject.API",
-      "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.API\\SchoolProject.API.csproj",
+      "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.API\\SchoolProject.API.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.API\\obj\\",
+      "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5850,8 +5850,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj": {
-              "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj"
+            "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj": {
+              "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj"
             }
           }
         }

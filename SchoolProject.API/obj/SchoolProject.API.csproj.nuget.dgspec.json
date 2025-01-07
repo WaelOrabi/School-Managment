@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects.net\\SchoolProject\\SchoolProject.API\\SchoolProject.API.csproj": {}
+    "D:\\projects.net\\School-Managment\\SchoolProject.API\\SchoolProject.API.csproj": {}
   },
   "projects": {
-    "D:\\projects.net\\SchoolProject\\SchoolProject.API\\SchoolProject.API.csproj": {
+    "D:\\projects.net\\School-Managment\\SchoolProject.API\\SchoolProject.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.API\\SchoolProject.API.csproj",
+        "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.API\\SchoolProject.API.csproj",
         "projectName": "SchoolProject.API",
-        "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.API\\SchoolProject.API.csproj",
+        "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.API\\SchoolProject.API.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.API\\obj\\",
+        "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj": {
+    "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj",
+        "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj",
         "projectName": "SchoolProject.Core",
-        "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\SchoolProject.Core.csproj",
+        "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\SchoolProject.Core.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Core\\obj\\",
+        "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -128,14 +128,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj"
               },
-              "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj"
               },
-              "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj"
               }
             }
           }
@@ -201,14 +201,14 @@
         }
       }
     },
-    "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj": {
+    "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj",
+        "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj",
         "projectName": "SchoolProject.Data",
-        "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj",
+        "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\obj\\",
+        "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -272,14 +272,14 @@
         }
       }
     },
-    "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
+    "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj",
+        "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj",
         "projectName": "SchoolProject.infrastructure",
-        "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj",
+        "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\obj\\",
+        "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -300,8 +300,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj"
               }
             }
           }
@@ -369,14 +369,14 @@
         }
       }
     },
-    "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj": {
+    "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj",
+        "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj",
         "projectName": "SchoolProject.Service",
-        "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\SchoolProject.Service.csproj",
+        "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Service\\SchoolProject.Service.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Service\\obj\\",
+        "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -397,11 +397,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj"
               },
-              "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
-                "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj"
+              "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj": {
+                "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.infrastructure\\SchoolProject.infrastructure.csproj"
               }
             }
           }

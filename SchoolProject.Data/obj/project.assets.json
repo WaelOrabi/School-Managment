@@ -798,11 +798,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj",
+      "projectUniqueName": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj",
       "projectName": "SchoolProject.Data",
-      "projectPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\SchoolProject.Data.csproj",
+      "projectPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\SchoolProject.Data.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\projects.net\\SchoolProject\\SchoolProject.Data\\obj\\",
+      "outputPath": "D:\\projects.net\\School-Managment\\SchoolProject.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
