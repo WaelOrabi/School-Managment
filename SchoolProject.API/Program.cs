@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Localization;
+﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SchoolProject.Core;
 using SchoolProject.Core.Middleware;
-using SchoolProject.Data.Entities.Identity;
 using SchoolProject.infrastructure;
 using SchoolProject.infrastructure.Data;
 using SchoolProject.Service;
@@ -14,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 
 
 // Configure DbContext
@@ -24,7 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 #region Dependency Injections
-builder.Services.AddInfrastructureDependencies().AddServiceDependencies().AddCoreDependencies().AddServiceRegisteration();
+builder.Services.AddInfrastructureDependencies().AddServiceDependencies().AddCoreDependencies().AddServiceRegisteration(builder.Configuration);
 #endregion
 
 #region Localization

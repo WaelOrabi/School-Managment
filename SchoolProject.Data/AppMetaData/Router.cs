@@ -32,5 +32,12 @@
             public const string Delete = Prefix + "/{id}";
             public const string ChangePassword = Prefix + "/Change-Password";
         }
+        public static class AuthenticationRouting
+        {
+            public const string Prefix = Role + "User";
+            public const string SignIn = Prefix + "/SignIn";
+            public const string RefreshToken = Prefix + "/Refresh-Token";
+            public const string ValidateToken = Prefix + "/Validate-Token";
+        }
     }
 }

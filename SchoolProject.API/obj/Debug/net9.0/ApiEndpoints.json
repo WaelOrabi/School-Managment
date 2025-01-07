@@ -164,6 +164,22 @@
   },
   {
     "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
+    "Method": "ChangePassword",
+    "RelativePath": "Api/V1/User/Change-Password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "SchoolProject.Core.Features.ApplicationUser.Commands.Models.ChangeUserPasswordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
     "Method": "Create",
     "RelativePath": "Api/V1/User/Create",
     "HttpMethod": "POST",
@@ -210,6 +226,64 @@
       {
         "Name": "PageSize",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.AuthenticationController",
+    "Method": "RefreshToken",
+    "RelativePath": "Api/V1/User/Refresh-Token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AccessToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RefreshToken",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.AuthenticationController",
+    "Method": "Create",
+    "RelativePath": "Api/V1/User/SignIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.AuthenticationController",
+    "Method": "ValidateToken",
+    "RelativePath": "Api/V1/User/Validate-Token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AccessToken",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
