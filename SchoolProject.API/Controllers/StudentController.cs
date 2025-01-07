@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolProject.API.Base;
 using SchoolProject.Core.Features.Students.Commands.Models;
 using SchoolProject.Core.Features.Students.Queries.Models;
@@ -6,8 +7,9 @@ using SchoolProject.Data.AppMetaData;
 
 namespace SchoolProject.API.Controllers
 {
-    //   [Route("api/[controller]")]
+
     [ApiController]
+    [Authorize]
     public class StudentController : AppControllerBase
     {
 

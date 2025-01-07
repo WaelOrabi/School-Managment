@@ -41,9 +41,9 @@ namespace SchoolProject.Core.Bases
         }
 
 
-        public Response<T> GenerateUnauthorizedResponse<T>()
+        public Response<T> GenerateUnauthorizedResponse<T>(string message = null)
         {
-            return CreateResponse<T>(HttpStatusCode.Unauthorized, false, "Unauthorized");
+            return CreateResponse<T>(HttpStatusCode.Unauthorized, false, message ?? _stringLocalizer[SharedResourcesKeys.Unauthorized]);
         }
 
 
