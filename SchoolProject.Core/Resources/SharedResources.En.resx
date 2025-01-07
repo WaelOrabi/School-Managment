@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlgorithmIsWrong" xml:space="preserve">
+    <value>Algorithm Is Wrong</value>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>Change Password Failed</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>Created Successfully</value>
   </data>
   <data name="Deleted" xml:space="preserve">
     <value>Deleted Successfully</value>
   </data>
+  <data name="DeletedFailed" xml:space="preserve">
+    <value>Delete Operation Failed</value>
+  </data>
   <data name="DepartmentId" xml:space="preserve">
     <value>Department id</value>
+  </data>
+  <data name="EmailIsExist" xml:space="preserve">
+    <value>Email is Exist</value>
+  </data>
+  <data name="FaildToAddUser" xml:space="preserve">
+    <value>Faild in add user</value>
   </data>
   <data name="IsNotExist" xml:space="preserve">
     <value> is Not Exist</value>
@@ -138,13 +153,49 @@
   <data name="NotFound" xml:space="preserve">
     <value>object is not found</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordNotCorrect" xml:space="preserve">
+    <value>Password Not Correct</value>
+  </data>
+  <data name="PasswordNotEqualConfirmPassword" xml:space="preserve">
+    <value>Password and Confirm Password Not Equals</value>
+  </data>
+  <data name="RefreshTokenIsExpired" xml:space="preserve">
+    <value>Refresh Token Is Expired</value>
+  </data>
+  <data name="RefreshTokenIsNotFound" xml:space="preserve">
+    <value>Refresh Token Is Not Found</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>this is field required</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Added Successfully</value>
   </data>
+  <data name="TokenIsExpired" xml:space="preserve">
+    <value>Token Is Expired</value>
+  </data>
+  <data name="TokenIsNotExpired" xml:space="preserve">
+    <value>Token Is Not Expired</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
   <data name="Updated" xml:space="preserve">
     <value>Updated Successfully</value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>Update Operation Failed</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="UserNameIsExist" xml:space="preserve">
+    <value>User Name is Exist</value>
+  </data>
+  <data name="UserNameIsNotExist" xml:space="preserve">
+    <value>User Name Is Not Exist</value>
   </data>
 </root>

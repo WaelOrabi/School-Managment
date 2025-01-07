@@ -22,5 +22,22 @@
             public const string Prefix = Role + "Department";
             public const string GetByID = Prefix + "/id";
         }
+        public static class ApplicationUserRouting
+        {
+            public const string Prefix = Role + "User";
+            public const string Create = Prefix + "/Create";
+            public const string Paginated = Prefix + "/Paginated";
+            public const string GetById = Prefix + "/{id}";
+            public const string Edit = Prefix + "/Edit";
+            public const string Delete = Prefix + "/{id}";
+            public const string ChangePassword = Prefix + "/Change-Password";
+        }
+        public static class AuthenticationRouting
+        {
+            public const string Prefix = Role + "User";
+            public const string SignIn = Prefix + "/SignIn";
+            public const string RefreshToken = Prefix + "/Refresh-Token";
+            public const string ValidateToken = Prefix + "/Validate-Token";
+        }
     }
 }

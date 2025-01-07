@@ -3,6 +3,7 @@ D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.A
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfoInputs.cache
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfo.cs
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.csproj.CoreCompileInputs.cache
+D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cs
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cache
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.sourcelink.json
 D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\appsettings.Development.json
@@ -172,4 +173,7 @@ D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\refint\SchoolPr
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.pdb
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.genruntimeconfig.cache
 D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\ref\SchoolProject.API.dll
-D:\projects.net\SchoolProject\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cs
+<<<<<<< HEAD
+=======
+D:\projects.net\SchoolProject\SchoolProject.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> 2eb3568de7c4a9b83cdcbe71f6f45fcd41957092

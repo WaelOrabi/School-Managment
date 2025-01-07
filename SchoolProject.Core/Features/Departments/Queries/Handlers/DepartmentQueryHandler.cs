@@ -38,7 +38,7 @@ namespace SchoolProject.Core.Features.Departments.Queries.Handlers
 
             Expression<Func<Student, StudentResponse>> expression = e => new StudentResponse(e.StudID, e.Localize(e.NameAr, e.NameEn));
             var studentQuerable = _studentService.GetStudentsByDepartmentIdQuerable(request.Id);
-            var paginatedList = await studentQuerable.Select(expression).ToPaginatedListAsunc(request.StudentPageNumber, request.StudentPageSize);
+            var paginatedList = await studentQuerable.Select(expression).ToPaginatedListAsync(request.StudentPageNumber, request.StudentPageSize);
             mapper.StudentList = paginatedList;
             return GenerateSuccessResponse<GetDepartmentByIdQueryResponse>(mapper);
         }

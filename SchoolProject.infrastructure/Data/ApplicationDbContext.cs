@@ -19,6 +19,7 @@ namespace SchoolProject.infrastructure.Data
         public DbSet<DepartmentSubject> DepartmentSubjects { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<StudentSubject> studentSubjects { get; set; }
+        public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
