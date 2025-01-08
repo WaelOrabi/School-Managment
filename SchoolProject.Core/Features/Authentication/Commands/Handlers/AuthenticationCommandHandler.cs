@@ -6,13 +6,13 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Authentication.Commands.Models;
 using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities.Identity;
-using SchoolProject.Data.Helpers;
+using SchoolProject.Data.Responses;
 using SchoolProject.Service.Abstracts;
 
 namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
 {
-    public class AuthenticationCommandHandler : ResponseHandler, IRequestHandler<SiginCommandModel, Response<JWTAuthResult>>,
-                                                                 IRequestHandler<RefreshTokenCommandModel, Response<JWTAuthResult>>
+    public class AuthenticationCommandHandler : ResponseHandler, IRequestHandler<SiginCommandModel, Response<JWTAuthResponse>>,
+                                                                 IRequestHandler<RefreshTokenCommandModel, Response<JWTAuthResponse>>
     {
         #region Fields
         private readonly IStringLocalizer<SharedResources> _localizer;
@@ -28,28 +28,28 @@ namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
             _authenticationService = authenticationService;
         }
 
-        public async Task<Response<JWTAuthResult>> Handle(SiginCommandModel request, CancellationToken cancellationToken)
+        public async Task<Response<JWTAuthResponse>> Handle(SiginCommandModel request, CancellationToken cancellationToken)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
             if (user == null)
-                return GenerateBadRequestResponse<JWTAuthResult>(_localizer[SharedResourcesKeys.UserNameIsNotExist]);
+                return GenerateBadRequestResponse<JWTAuthResponse>(_localizer[SharedResourcesKeys.UserNameIsNotExist]);
             if (!user.EmailConfirmed)
             {
                 user.EmailConfirmed = true; // Set EmailConfirmed to true
                 var updateResult = await _userManager.UpdateAsync(user); // Save the change to the database
                 if (!updateResult.Succeeded)
                 {
-                    return GenerateBadRequestResponse<JWTAuthResult>("Failed to update EmailConfirmed property");
+                    return GenerateBadRequestResponse<JWTAuthResponse>("Failed to update EmailConfirmed property");
                 }
             }
             var signInResult = await _sigInManager.CheckPasswordSignInAsync(user, request.Password, false);
             if (!signInResult.Succeeded)
-                return GenerateBadRequestResponse<JWTAuthResult>(_localizer[SharedResourcesKeys.PasswordNotCorrect]);
+                return GenerateBadRequestResponse<JWTAuthResponse>(_localizer[SharedResourcesKeys.PasswordNotCorrect]);
             var result = await _authenticationService.GetJWTToken(user);
-            return GenerateSuccessResponse<JWTAuthResult>(result);
+            return GenerateSuccessResponse<JWTAuthResponse>(result);
         }
 
-        public async Task<Response<JWTAuthResult>> Handle(RefreshTokenCommandModel request, CancellationToken cancellationToken)
+        public async Task<Response<JWTAuthResponse>> Handle(RefreshTokenCommandModel request, CancellationToken cancellationToken)
         {
             var jwtToken = _authenticationService.ReadJWTToken(request.AccessToken);
 
@@ -57,15 +57,15 @@ namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
 
             switch (userId, userRefreshToken)
             {
-                case ("AlgorithmIsWrong", null): return GenerateUnauthorizedResponse<JWTAuthResult>(_localizer[SharedResourcesKeys.AlgorithmIsWrong]);
-                case ("TokenIsNotExpired", null): return GenerateUnauthorizedResponse<JWTAuthResult>(_localizer[SharedResourcesKeys.TokenIsNotExpired]);
-                case ("RefreshTokenIsNotFound", null): return GenerateUnauthorizedResponse<JWTAuthResult>(_localizer[SharedResourcesKeys.RefreshTokenIsNotFound]);
-                case ("RefreshTokenIsExpired", null): return GenerateUnauthorizedResponse<JWTAuthResult>(_localizer[SharedResourcesKeys.RefreshTokenIsExpired]);
+                case ("AlgorithmIsWrong", null): return GenerateUnauthorizedResponse<JWTAuthResponse>(_localizer[SharedResourcesKeys.AlgorithmIsWrong]);
+                case ("TokenIsNotExpired", null): return GenerateUnauthorizedResponse<JWTAuthResponse>(_localizer[SharedResourcesKeys.TokenIsNotExpired]);
+                case ("RefreshTokenIsNotFound", null): return GenerateUnauthorizedResponse<JWTAuthResponse>(_localizer[SharedResourcesKeys.RefreshTokenIsNotFound]);
+                case ("RefreshTokenIsExpired", null): return GenerateUnauthorizedResponse<JWTAuthResponse>(_localizer[SharedResourcesKeys.RefreshTokenIsExpired]);
             }
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
-                return GenerateNotFoundResponse<JWTAuthResult>();
+                return GenerateNotFoundResponse<JWTAuthResponse>();
 
             var result = await _authenticationService.GetRefreshToken(user, jwtToken, userRefreshToken, request.RefreshToken);
 

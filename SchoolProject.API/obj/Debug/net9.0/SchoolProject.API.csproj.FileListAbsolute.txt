@@ -154,7 +154,6 @@ D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProjec
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfoInputs.cache
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.AssemblyInfo.cs
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.csproj.CoreCompileInputs.cache
-D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cs
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cache
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.sourcelink.json
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\scopedcss\bundle\SchoolProject.API.styles.css

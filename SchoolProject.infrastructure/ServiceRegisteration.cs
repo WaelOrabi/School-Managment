@@ -15,7 +15,8 @@ namespace SchoolProject.infrastructure
     {
         public static IServiceCollection AddServiceRegisteration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddIdentity<User, IdentityRole<int>>(option =>
+
+            services.AddIdentity<User, Role>(option =>
             {
                 // Password settings
                 option.Password.RequireDigit = true;
@@ -40,33 +41,12 @@ namespace SchoolProject.infrastructure
             })
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
+
             //JWT Authectication
             var jwtSettings = new JwtSettings();
             configuration.GetSection(nameof(jwtSettings)).Bind(jwtSettings);
             services.AddSingleton(jwtSettings);
 
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = jwtSettings.ValidateIssuer,
-                    ValidIssuers = new[] { jwtSettings.Issuer },
-                    ValidateIssuerSigningKey = jwtSettings.ValidateIssuerSigningKey,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
-                    ValidateAudience = jwtSettings.ValidateAudience,
-                    ValidAudience = jwtSettings.Audience,
-                    ValidateLifetime = jwtSettings.ValidateLifetime,
-
-
-
-                };
-            });
             services.AddSwaggerGen(options =>
             {
                 var securityScheme = new OpenApiSecurityScheme
@@ -93,6 +73,49 @@ namespace SchoolProject.infrastructure
                 };
                 options.AddSecurityRequirement(securityRequirement);
             });
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = jwtSettings.ValidateIssuer,
+                    ValidIssuers = new[] { jwtSettings.Issuer },
+                    ValidateIssuerSigningKey = jwtSettings.ValidateIssuerSigningKey,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
+                    ValidateAudience = jwtSettings.ValidateAudience,
+                    ValidAudience = jwtSettings.Audience,
+                    ValidateLifetime = jwtSettings.ValidateLifetime,
+
+
+
+                };
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CreateStudent", policy =>
+                {
+                    policy.RequireRole("Admin").RequireClaim("Create Student", "True");
+                    //.RequireClaim("Edit Student", "True");
+                });
+                options.AddPolicy("DeleteStudent", policy =>
+                {
+                    policy.RequireRole("Admin").RequireClaim("Delete Student", "True");
+
+                });
+                options.AddPolicy("EditStudent", policy =>
+                {
+                    policy.RequireRole("Admin").RequireClaim("Edit Student", "True");
+
+                });
+            });
+
             return services;
         }
     }
