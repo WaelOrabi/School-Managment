@@ -173,3 +173,4 @@ D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\refint\Schoo
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.pdb
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.genruntimeconfig.cache
 D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\ref\SchoolProject.API.dll
+D:\projects.net\School-Managment\SchoolProject.API\obj\Debug\net9.0\SchoolProject.API.MvcApplicationPartsAssemblyInfo.cs
