@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SchoolProject.Core;
 using SchoolProject.Core.Middleware;
+using SchoolProject.Data.Entities.Identity;
 using SchoolProject.infrastructure;
 using SchoolProject.infrastructure.Data;
+using SchoolProject.infrastructure.Seeder;
 using SchoolProject.Service;
 using System.Globalization;
 
@@ -22,7 +25,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 #region Dependency Injections
-builder.Services.AddInfrastructureDependencies().AddServiceDependencies().AddCoreDependencies().AddServiceRegisteration(builder.Configuration);
+builder.Services.AddInfrastructureDependencies()
+                .AddServiceDependencies()
+                .AddCoreDependencies()
+                .AddServiceRegisteration(builder.Configuration);
 #endregion
 
 #region Localization
@@ -43,7 +49,15 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 #endregion
 
 var app = builder.Build();
-
+#region seed data
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
+    await RoleSeeder.SeedAsync(roleManager);
+    await UserSeeder.SeedAsync(userManager);
+}
+#endregion
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {

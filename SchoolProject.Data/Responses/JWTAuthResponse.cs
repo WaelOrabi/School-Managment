@@ -1,6 +1,6 @@
-﻿namespace SchoolProject.Data.Helpers
+﻿namespace SchoolProject.Data.Responses
 {
-    public class JWTAuthResult
+    public class JWTAuthResponse
     {
         public string AccessToken { get; set; }
         public RefreshToken RefreshToken { get; set; }

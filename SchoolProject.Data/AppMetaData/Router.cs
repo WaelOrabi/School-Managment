@@ -34,10 +34,25 @@
         }
         public static class AuthenticationRouting
         {
-            public const string Prefix = Role + "User";
+            public const string Prefix = Role + "Authentication";
             public const string SignIn = Prefix + "/SignIn";
             public const string RefreshToken = Prefix + "/Refresh-Token";
             public const string ValidateToken = Prefix + "/Validate-Token";
+        }
+        public static class AuthorizationRouting
+        {
+            public const string Prefix = Role + "Authorization";
+            public const string Roles = Prefix + "/Roles";
+            public const string Claims = Prefix + "/Claims";
+            public const string Create = Roles + "/Create";
+            public const string Edit = Roles + "/Edit";
+            public const string Delete = Roles + "/Delete/{id}";
+            public const string RolesList = Roles + "/List";
+            public const string GetById = Roles + "/GetById/{id}";
+            public const string ManageUserRoles = Roles + "/Manage-User-Roles/{userId}";
+            public const string UpdateUserRoles = Roles + "/Update-User-Roles";
+            public const string ManageUserClaims = Claims + "/Manage-User-Claims/{userId}";
+            public const string UpdateUserClaims = Roles + "/Update-User-Claims";
         }
     }
 }

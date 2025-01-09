@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Data.Helpers;
+using SchoolProject.Data.Responses;
 using SchoolProject.infrastructure.Abstracts;
 using SchoolProject.Service.Abstracts;
 using System.IdentityModel.Tokens.Jwt;
@@ -31,10 +32,10 @@ namespace SchoolProject.Service.Implementations
         }
         #endregion
         #region Handle Functions
-        public async Task<JWTAuthResult> GetJWTToken(User user)
+        public async Task<JWTAuthResponse> GetJWTToken(User user)
         {
 
-            var (jwtToken, accessToken) = GenerateJwtToken(user);
+            var (jwtToken, accessToken) = await GenerateJwtToken(user);
 
             var refreshToken = GetRefreshToken(user.UserName);
             var userRefreshToken = new UserRefreshToken
@@ -49,18 +50,21 @@ namespace SchoolProject.Service.Implementations
                 UserId = user.Id,
             };
             await _refreshTokenRepository.AddAsync(userRefreshToken);
-            return new JWTAuthResult
+            return new JWTAuthResponse
             {
                 AccessToken = accessToken,
                 RefreshToken = refreshToken
             };
         }
-        private (JwtSecurityToken, string) GenerateJwtToken(User user)
+        private async Task<(JwtSecurityToken, string)> GenerateJwtToken(User user)
         {
+
+            var claims = await GetClaims(user);
+
             var jwtToken = new JwtSecurityToken(
          _jwtSettings.Issuer,
          _jwtSettings.Audience,
-         GetClaims(user),
+            claims,
          expires: DateTime.Now.AddDays(_jwtSettings.AccessTokenExpireDate),
          signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)), SecurityAlgorithms.HmacSha256Signature)
          );
@@ -87,24 +91,32 @@ namespace SchoolProject.Service.Implementations
             return Convert.ToBase64String(randomNumber);
         }
 
-        public List<Claim> GetClaims(User user)
+        public async Task<List<Claim>> GetClaims(User user)
         {
+            var roles = await _userManager.GetRolesAsync(user);
+
             var claims = new List<Claim>() {
-            new Claim(nameof(UserClaimModel.UserName), user.UserName),
-            new Claim(nameof(UserClaimModel.Email), user.Email),
-            new Claim(nameof(UserClaimModel.PhoneNumber), user.PhoneNumber),
-                 new Claim(nameof(UserClaimModel.Id), user.Id.ToString())
+            new Claim(ClaimTypes.Name, user.UserName),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.MobilePhone, user.PhoneNumber),
+            new Claim(nameof(UserClaimModel.Id), user.Id.ToString()),
+        //  new Claim(JwtRegisteredClaimNames.Email,""),
+
             };
+            foreach (var role in roles)
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            claims.AddRange(userClaims);
             return claims;
         }
 
-        public async Task<JWTAuthResult> GetRefreshToken(User user, JwtSecurityToken jwtToken, UserRefreshToken? userRefreshToken, string refreshToken)
+        public async Task<JWTAuthResponse> GetRefreshToken(User user, JwtSecurityToken jwtToken, UserRefreshToken? userRefreshToken, string refreshToken)
         {
-            var (jwtSecurityToken, newToken) = GenerateJwtToken(user);
-            var response = new JWTAuthResult();
+            var (jwtSecurityToken, newToken) = await GenerateJwtToken(user);
+            var response = new JWTAuthResponse();
             response.AccessToken = newToken;
             var refreshTokenResult = new RefreshToken();
-            refreshTokenResult.UserName = jwtToken.Claims.FirstOrDefault(x => x.Type == nameof(UserClaimModel.UserName)).Value;
+            refreshTokenResult.UserName = jwtToken.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
             refreshTokenResult.TokenString = refreshToken;
             refreshTokenResult.ExpireAt = userRefreshToken.ExpiryDate;
             response.RefreshToken = refreshTokenResult;
