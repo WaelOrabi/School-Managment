@@ -10,7 +10,7 @@ namespace SchoolProject.Data.Entities
         {
             StudentsSubjects = new HashSet<StudentSubject>();
             DepartmetsSubjects = new HashSet<DepartmentSubject>();
-            Ins_Subjects = new HashSet<Ins_Subject>();
+            Ins_Subjects = new HashSet<InstructorSubject>();
         }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,12 +20,15 @@ namespace SchoolProject.Data.Entities
         [StringLength(100)]
         public string? SubjectNameEn { get; set; }
         public int? Period { get; set; }
+
         [InverseProperty(nameof(StudentSubject.Subject))]
         public virtual ICollection<StudentSubject> StudentsSubjects { get; set; }
+
         [InverseProperty(nameof(DepartmentSubject.Subject))]
         public virtual ICollection<DepartmentSubject> DepartmetsSubjects { get; set; }
-        [InverseProperty(nameof(Ins_Subject.Subject))]
-        public virtual ICollection<Ins_Subject> Ins_Subjects { get; set; }
+
+        [InverseProperty(nameof(InstructorSubject.Subject))]
+        public virtual ICollection<InstructorSubject> Ins_Subjects { get; set; }
     }
 
 }

@@ -8,7 +8,7 @@ namespace SchoolProject.infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Instructor> builder)
         {
-            builder.HasOne(x => x.Supervisor).WithMany(x => x.Instructors).HasForeignKey(x => x.SupervisorId).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.Supervisor).WithMany(x => x.Instructors).HasForeignKey(x => x.SupervisorId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

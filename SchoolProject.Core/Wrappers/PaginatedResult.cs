@@ -10,13 +10,13 @@
         public int PageSize { get; set; }
         public bool HasPreviousPage => CurrentPage > 1;
         public bool HasNextPage => CurrentPage < TotalPages;
-        public List<string> Messages { get; set; }
+
         public bool Succeeded { get; set; }
         public PaginatedResult(List<T> data)
         {
             Data = data;
         }
-        public PaginatedResult(bool succeeded, List<T> data = default, List<string> messages = null, int count = 0, int page = 1, int pageSize = 10)
+        public PaginatedResult(bool succeeded, List<T> data = default, int count = 0, int page = 1, int pageSize = 10)
         {
             Data = data;
             CurrentPage = page;
@@ -27,7 +27,7 @@
         }
         public static PaginatedResult<T> Success(List<T> data, int count, int page, int pageSize)
         {
-            return new(true, data, null, count, page, pageSize);
+            return new(true, data, count, page, pageSize);
         }
     }
 }

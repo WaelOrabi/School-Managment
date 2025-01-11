@@ -177,6 +177,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>غير متوفر</value>
   </data>
+  <data name="NotNull" xml:space="preserve">
+    <value>ليس فارغا</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة المرور</value>
   </data>
@@ -202,7 +205,7 @@
     <value>هذه الصلاحية غير موجودة </value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>تمت الإضافة بنجاح</value>
+    <value>تمت العملية بنجاح</value>
   </data>
   <data name="TokenIsExpired" xml:space="preserve">
     <value>رمز الوصول منتهي الصلاحية</value>
@@ -212,6 +215,9 @@
   </data>
   <data name="Unauthorized" xml:space="preserve">
     <value>وصول غير مصرح به</value>
+  </data>
+  <data name="UnprocessableEntity" xml:space="preserve">
+    <value> الأوبجكت غير قابل للمعالجة</value>
   </data>
   <data name="Updated" xml:space="preserve">
     <value>تم التعديل بنجاح</value>

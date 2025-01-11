@@ -76,7 +76,7 @@ namespace SchoolProject.infrastructure.InfrastructureBases
 
         public IQueryable<T> GetTableAsTracking()
         {
-            return _dbContext.Set<T>().AsQueryable();
+            return _dbContext.Set<T>().AsTracking().AsQueryable();
         }
         public virtual async Task UpdateRangeAsync(ICollection<T> entities)
         {

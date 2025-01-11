@@ -20,12 +20,60 @@
         public static class DepartmentRouting
         {
             public const string Prefix = Role + "Department";
+            public const string List = Prefix + "List";
             public const string GetByID = Prefix + "/id";
+            public const string Create = Prefix + "/Create";
+            public const string Edit = Prefix + "/Edit";
+            public const string Delete = Prefix + "/{id}";
+            public const string Paginated = Prefix + "/Paginated";
+        }
+        public static class InstructorRouting
+        {
+            public const string Prefix = Role + "Instructor";
+            public const string List = Prefix + "List";
+            public const string GetByID = Prefix + "/{id}";
+            public const string Create = Prefix + "/Create";
+            public const string Edit = Prefix + "/Edit";
+            public const string Delete = Prefix + "/{id}";
+            public const string Paginated = Prefix + "/Paginated";
+        }
+        public static class SubjectRouting
+        {
+            public const string Prefix = Role + "Subject";
+            public const string List = Prefix + "List";
+            public const string GetByID = Prefix + "/id";
+            public const string Create = Prefix + "/Create";
+            public const string Edit = Prefix + "/Edit";
+            public const string Delete = Prefix + "/{id}";
+            public const string Paginated = Prefix + "/Paginated";
+        }
+        public static class StudentSubjectRouting
+        {
+            public const string Prefix = Role + "Student-Subject";
+
+            public const string Create = Prefix + "/Create";
+            public const string Edit = Prefix + "/Edit";
+            public const string Delete = Prefix + "/Delete/{studentId}/{subjectId}";
+
+        }
+        public static class DepartmentSubjectRouting
+        {
+            public const string Prefix = Role + "Department-Subject";
+            public const string Create = Prefix + "/Create";
+            public const string Delete = Prefix + "/Delete/{departmentId}/{subjectId}";
+
+        }
+        public static class InstructorSubjectRouting
+        {
+            public const string Prefix = Role + "Instructor-Subject";
+            public const string Create = Prefix + "/Create";
+            public const string Delete = Prefix + "/Delete/{instructorId}/{subjectId}";
+
         }
         public static class ApplicationUserRouting
         {
             public const string Prefix = Role + "User";
-            public const string Create = Prefix + "/Create";
+            public const string Register = Prefix + "/Register";
             public const string Paginated = Prefix + "/Paginated";
             public const string GetById = Prefix + "/{id}";
             public const string Edit = Prefix + "/Edit";

@@ -177,6 +177,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>object is not found</value>
   </data>
+  <data name="NotNull" xml:space="preserve">
+    <value>Not Null</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -202,7 +205,7 @@
     <value>Role Not Found</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Added Successfully</value>
+    <value>Operation Completed Successfully.</value>
   </data>
   <data name="TokenIsExpired" xml:space="preserve">
     <value>Token Is Expired</value>
@@ -212,6 +215,9 @@
   </data>
   <data name="Unauthorized" xml:space="preserve">
     <value>Unauthorized</value>
+  </data>
+  <data name="UnprocessableEntity" xml:space="preserve">
+    <value>Un process able Entity</value>
   </data>
   <data name="Updated" xml:space="preserve">
     <value>Updated Successfully</value>
