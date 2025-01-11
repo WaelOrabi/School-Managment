@@ -4,6 +4,7 @@
     {
         public const string Required = "Required";
         public const string NotFound = "NotFound";
+        public const string NotNull = "NotNull";
         public const string Deleted = "Deleted";
         public const string Created = "Created";
         public const string Updated = "Updated";
@@ -39,5 +40,7 @@
         public const string FailedToUpdateUserClaims = "FailedToUpdateUserClaims";
         public const string FailedToAddNewClaims = "FailedToAddNewClaims";
         public const string FailedToRemoveOldClaims = "FailedToRemoveOldClaims";
+        public const string UnprocessableEntity = "UnprocessableEntity";
+
     }
 }

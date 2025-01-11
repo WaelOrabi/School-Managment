@@ -201,6 +201,91 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentSubjectController",
+    "Method": "Create",
+    "RelativePath": "Api/V1/Department-Subject/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.DepartmentsSubjects.Commands.Models.AddDepartmentSubjectCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentSubjectController",
+    "Method": "DeleteDepartment",
+    "RelativePath": "Api/V1/Department-Subject/Delete/{departmentId}/{subjectId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "departmentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "subjectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
+    "Method": "DeleteDepartment",
+    "RelativePath": "Api/V1/Department/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
+    "Method": "AddDepartment",
+    "RelativePath": "Api/V1/Department/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.Departments.Commands.Models.AddDepartmentCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
+    "Method": "EditDepartment",
+    "RelativePath": "Api/V1/Department/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.Departments.Commands.Models.EditDepartmentCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
     "Method": "GetDepartmentById",
     "RelativePath": "Api/V1/Department/id",
@@ -222,6 +307,242 @@
         "Name": "StudentPageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
+    "Method": "Paginated",
+    "RelativePath": "Api/V1/Department/Paginated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.DepartmentController",
+    "Method": "GetDepartmentList",
+    "RelativePath": "Api/V1/DepartmentList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorSubjectController",
+    "Method": "Create",
+    "RelativePath": "Api/V1/Instructor-Subject/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.InstructorsSubjects.Commands.Models.AddInstructorSubjectCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorSubjectController",
+    "Method": "DeleteDepartment",
+    "RelativePath": "Api/V1/Instructor-Subject/Delete/{instructorId}/{subjectId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "instructorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "subjectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorController",
+    "Method": "Delete",
+    "RelativePath": "Api/V1/Instructor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorController",
+    "Method": "GetInstructorById",
+    "RelativePath": "Api/V1/Instructor/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorController",
+    "Method": "Create",
+    "RelativePath": "Api/V1/Instructor/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.Instructors.Commands.Models.AddInstructorCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorController",
+    "Method": "Edit",
+    "RelativePath": "Api/V1/Instructor/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.Instructors.Commands.Models.EditInstructorCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorController",
+    "Method": "Paginated",
+    "RelativePath": "Api/V1/Instructor/Paginated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.InstructorController",
+    "Method": "GetInstructorList",
+    "RelativePath": "Api/V1/InstructorList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.StudentSubjectController",
+    "Method": "Create",
+    "RelativePath": "Api/V1/Student-Subject/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.StudentsSubjects.Commands.Models.AddStudentSubjectCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.StudentSubjectController",
+    "Method": "DeleteDepartment",
+    "RelativePath": "Api/V1/Student-Subject/Delete/{studentId}/{subjectId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "subjectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.StudentSubjectController",
+    "Method": "Edit",
+    "RelativePath": "Api/V1/Student-Subject/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.StudentsSubjects.Commands.Models.EditStudentSubjectCommandModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -332,6 +653,121 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SchoolProject.API.Controllers.SubjectController",
+    "Method": "DeleteDepartment",
+    "RelativePath": "Api/V1/Subject/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.SubjectController",
+    "Method": "Create",
+    "RelativePath": "Api/V1/Subject/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.Subjects.Commands.Models.AddSubjectCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.SubjectController",
+    "Method": "EditDepartment",
+    "RelativePath": "Api/V1/Subject/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.Subjects.Commands.Models.EditSubjectCommandModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.SubjectController",
+    "Method": "GetSubjectById",
+    "RelativePath": "Api/V1/Subject/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StudentPageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StudentPageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.SubjectController",
+    "Method": "Paginated",
+    "RelativePath": "Api/V1/Subject/Paginated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.SubjectController",
+    "Method": "GetSubjectList",
+    "RelativePath": "Api/V1/SubjectList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
     "Method": "GetUserById",
     "RelativePath": "Api/V1/User/{id}",
@@ -381,22 +817,6 @@
   },
   {
     "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
-    "Method": "Create",
-    "RelativePath": "Api/V1/User/Create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "SchoolProject.Core.Features.ApplicationUser.Commands.Models.AddUserCommandModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
     "Method": "Edit",
     "RelativePath": "Api/V1/User/Edit",
     "HttpMethod": "PUT",
@@ -428,6 +848,22 @@
         "Name": "PageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolProject.API.Controllers.ApplicationUserController",
+    "Method": "Register",
+    "RelativePath": "Api/V1/User/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SchoolProject.Core.Features.ApplicationUser.Commands.Models.AddUserCommandModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

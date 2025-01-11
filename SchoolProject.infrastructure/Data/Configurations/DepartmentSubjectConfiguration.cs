@@ -9,8 +9,8 @@ namespace SchoolProject.infrastructure.Data.Configurations
         public void Configure(EntityTypeBuilder<DepartmentSubject> builder)
         {
             builder.HasKey(x => new { x.SubID, x.DID });
-            builder.HasOne(ds => ds.Department).WithMany(d => d.DepartmetsSubjects).HasForeignKey(ds => ds.DID);
-            builder.HasOne(ds => ds.Subject).WithMany(s => s.DepartmetsSubjects).HasForeignKey(ds => ds.SubID);
+            builder.HasOne(ds => ds.Department).WithMany(d => d.DepartmetsSubjects).HasForeignKey(ds => ds.DID).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(ds => ds.Subject).WithMany(s => s.DepartmetsSubjects).HasForeignKey(ds => ds.SubID).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

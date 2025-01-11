@@ -10,8 +10,8 @@ namespace SchoolProject.infrastructure.Data.Configurations
         {
             builder.HasKey(x => x.DID);
             builder.Property(x => x.DNameAr).HasMaxLength(100);
-            builder.HasOne(x => x.InstructorManager).WithOne(x => x.departmentManager).HasForeignKey<Department>(x => x.InsManager).OnDelete(DeleteBehavior.Restrict);
-            builder.HasMany(x => x.Students).WithOne(x => x.Department).HasForeignKey(x => x.DID).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.InstructorManager).WithOne(x => x.departmentManager).HasForeignKey<Department>(x => x.InsManager).OnDelete(DeleteBehavior.SetNull);
+            builder.HasMany(x => x.Students).WithOne(x => x.Department).HasForeignKey(x => x.DID).OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

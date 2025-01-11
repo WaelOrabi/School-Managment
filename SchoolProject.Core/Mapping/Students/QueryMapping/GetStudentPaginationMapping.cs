@@ -1,10 +1,9 @@
-﻿using AutoMapper;
-using SchoolProject.Core.Features.Students.Queries.Response;
+﻿using SchoolProject.Core.Features.Students.Queries.Response;
 using SchoolProject.Data.Entities;
 
 namespace SchoolProject.Core.Mapping.Students
 {
-    public partial class StudentProfile : Profile
+    public partial class StudentProfile
     {
         public void GetStudentPaginationMapping()
         {

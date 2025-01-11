@@ -23,7 +23,7 @@ namespace SchoolProject.Core.Behaviors
                 var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
                 if (failures.Count != 0)
                 {
-                    var message = failures.Select(x => _localizer[x.PropertyName] + ":" + _localizer[x.ErrorMessage]).FirstOrDefault();
+                    var message = failures.Select(x => _localizer[x.PropertyName] + " " + _localizer[x.ErrorMessage]).FirstOrDefault();
                     throw new ValidationException(message);
                 }
             }

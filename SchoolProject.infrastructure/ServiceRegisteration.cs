@@ -101,17 +101,17 @@ namespace SchoolProject.infrastructure
             {
                 options.AddPolicy("CreateStudent", policy =>
                 {
-                    policy.RequireRole("Admin").RequireClaim("Create Student", "True");
+                    policy.RequireClaim("Create Student", "True");
                     //.RequireClaim("Edit Student", "True");
                 });
                 options.AddPolicy("DeleteStudent", policy =>
                 {
-                    policy.RequireRole("Admin").RequireClaim("Delete Student", "True");
+                    policy.RequireClaim("Delete Student", "True");
 
                 });
                 options.AddPolicy("EditStudent", policy =>
                 {
-                    policy.RequireRole("Admin").RequireClaim("Edit Student", "True");
+                    policy.RequireClaim("Edit Student", "True");
 
                 });
             });

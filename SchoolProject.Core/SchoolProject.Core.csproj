@@ -22,10 +22,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Departments\Commands\Handlers\" />
-    <Folder Include="Features\Departments\Commands\Models\" />
-    <Folder Include="Features\Departments\Commands\Validations\" />
-    <Folder Include="Mapping\Departments\CommandMapping\" />
+    <Folder Include="Features\DepartmentsSubjects\Queries\Handlers\" />
+    <Folder Include="Features\DepartmentsSubjects\Queries\Models\" />
+    <Folder Include="Features\DepartmentsSubjects\Queries\Responses\" />
+    <Folder Include="Features\InstructorsSubjects\Queries\Handlers\" />
+    <Folder Include="Features\InstructorsSubjects\Queries\Models\" />
+    <Folder Include="Features\InstructorsSubjects\Queries\Responses\" />
+    <Folder Include="Features\StudentsSubjects\Queries\Handlers\" />
+    <Folder Include="Features\StudentsSubjects\Queries\Models\" />
+    <Folder Include="Features\StudentsSubjects\Queries\Responses\" />
+    <Folder Include="Mapping\DepartmentsSubjects\QueryMapping\" />
+    <Folder Include="Mapping\InstructorsSubjects\QueryMapping\" />
+    <Folder Include="Mapping\StudentsSubjects\QueryMapping\" />
   </ItemGroup>
 
 </Project>

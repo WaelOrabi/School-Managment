@@ -33,6 +33,7 @@ namespace SchoolProject.Core.Features.ApplicationUser.Queries.Handlers
         {
             var users = _userManager.Users.AsQueryable();
             var paginatedList = await _mapper.ProjectTo<GetUserPaginationResponse>(users).ToPaginatedListAsync(request.PageNumber, request.PageSize);
+            paginatedList.Meta = new { Count = paginatedList.Data.Count() };
             return paginatedList;
         }
 
