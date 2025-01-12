@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SchoolProject.Data.Entities
 {
 
-    public class Ins_Subject
+    public class InstructorSubject
     {
         [Key]
         public int InsId { get; set; }

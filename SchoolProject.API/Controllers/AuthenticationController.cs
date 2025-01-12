@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolProject.API.Base;
 using SchoolProject.Core.Features.Authentication.Commands.Models;
 using SchoolProject.Core.Features.Authentication.Queries.Models;
@@ -8,15 +9,18 @@ namespace SchoolProject.API.Controllers
 {
 
     [ApiController]
+    [Authorize()]
     public class AuthenticationController : AppControllerBase
     {
         [HttpPost(Router.AuthenticationRouting.SignIn)]
+        [AllowAnonymous()]
         public async Task<IActionResult> Create([FromForm] SiginCommandModel siginCommandModel)
         {
             var response = await Mediator.Send(siginCommandModel);
             return NewResult(response);
         }
         [HttpPost(Router.AuthenticationRouting.RefreshToken)]
+        [AllowAnonymous()]
         public async Task<IActionResult> RefreshToken([FromForm] RefreshTokenCommandModel refreshTokenCommandModel)
         {
             var response = await Mediator.Send(refreshTokenCommandModel);

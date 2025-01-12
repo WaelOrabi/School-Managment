@@ -22,46 +22,46 @@ namespace SchoolProject.Core.Bases
             {
                 StatusCode = statusCode,
                 Succeeded = succeeded,
-                Message = message ?? "Operation Successful",
+                Message = message,
                 Data = data,
                 Meta = meta
             };
         }
 
 
-        public Response<T> GenerateDeletedResponse<T>(string message = null)
+        public Response<T> GenerateDeletedResponse<T>(string? message = null)
         {
             return CreateResponse<T>(HttpStatusCode.OK, true, message ?? _stringLocalizer[SharedResourcesKeys.Deleted]);
         }
 
 
-        public Response<T> GenerateSuccessResponse<T>(T entity, object meta = null)
+        public Response<T> GenerateSuccessResponse<T>(T entity, string? message = null)
         {
-            return CreateResponse(HttpStatusCode.OK, true, _stringLocalizer[SharedResourcesKeys.Success], entity, meta);
+            return CreateResponse(HttpStatusCode.OK, true, message ?? _stringLocalizer[SharedResourcesKeys.Success], entity);
         }
 
 
-        public Response<T> GenerateUnauthorizedResponse<T>(string message = null)
+        public Response<T> GenerateUnauthorizedResponse<T>(string? message = null)
         {
             return CreateResponse<T>(HttpStatusCode.Unauthorized, false, message ?? _stringLocalizer[SharedResourcesKeys.Unauthorized]);
         }
 
 
-        public Response<T> GenerateBadRequestResponse<T>(string message = null)
+        public Response<T> GenerateBadRequestResponse<T>(string? message = null)
         {
-            return CreateResponse<T>(HttpStatusCode.BadRequest, false, message ?? "Bad Request");
+            return CreateResponse<T>(HttpStatusCode.BadRequest, false, message ?? "BadRequest");
         }
-        public Response<T> GenerateUnprocessableEntityResponse<T>(string message = null)
+        public Response<T> GenerateUnprocessableEntityResponse<T>(string? message = null)
         {
-            return CreateResponse<T>(HttpStatusCode.UnprocessableEntity, false, message ?? "Unprocessable Entity");
+            return CreateResponse<T>(HttpStatusCode.UnprocessableEntity, false, message ?? _stringLocalizer[SharedResourcesKeys.UnprocessableEntity]);
         }
-        public Response<T> GenerateNotFoundResponse<T>(string message = null)
+        public Response<T> GenerateNotFoundResponse<T>(string? message = null)
         {
             return CreateResponse<T>(HttpStatusCode.NotFound, false, message ?? _stringLocalizer[SharedResourcesKeys.NotFound]);
         }
-        public Response<T> GenerateCreatedResponse<T>(T entity, object meta = null)
+        public Response<T> GenerateCreatedResponse<T>(T entity, string? message = null)
         {
-            return CreateResponse(HttpStatusCode.Created, true, _stringLocalizer[SharedResourcesKeys.Created], entity, meta);
+            return CreateResponse(HttpStatusCode.Created, true, message ?? _stringLocalizer[SharedResourcesKeys.Created], entity);
         }
     }
 }
